@@ -10,7 +10,10 @@
         <a href="#">
           <img src="img/logo-technomart.svg" width="109" height="19" alt="Техномарт">
         </a>
-        <!-- Форма поиска --> 
+        <form action="" method="GET">
+          <label for="search" class="visually-hidden">Поиск по каталогу</label>
+          <input type="search" name="search" id="search" placeholder="Поиск:">
+        </form>
         <a href="">Закладки: 0</a>
         <a href="">Корзина: 0</a>
         <a href="">Оформить заказ</a>
@@ -41,9 +44,9 @@
       </nav>
     </header>
     <main>
-      <h1>Главная страница интернет-магазина «Техномарт»</h1>
+      <h1 class="visually-hidden">Главная страница интернет-магазина «Техномарт»</h1>
       <section>
-        <h2>Промо</h2>
+        <h2 class="visually-hidden">Промо</h2>
         <div>
           <div>
             <h3>Материалы</h3>
@@ -76,8 +79,8 @@
             <h3>Перфораторы</h3>
             <p>Настоящие мужские игрушки</p>
           </div>
-          <button type="button"> < </button> 
-          <button type="button"> > </button>
+          <button type="button" aria-label="Предыдущий слайд"> < </button> 
+          <button type="button" aria-label="Следующий слайд"> > </button>
           <a href="catalog.html">Открыть каталог</a>
         </div>
       </section>
@@ -88,24 +91,40 @@
         </div>
         <div>
           <div>
+            <div>
+              <button type="button">Купить</button>
+              <button type="button">В закладки</button>
+            </div>
             <img src="img/item-bosch-bfg9000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 9000">
             <h3>Перфоратор BOSCH BFG 9000</h3>
             <p>32500 Р.</p>
             <p>25500 Р.</p>
           </div>
           <div>
+            <div>
+              <button type="button">Купить</button>
+              <button type="button">В закладки</button>
+            </div>
             <img src="img/item-bosch-bfg3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
             <h3>Перфоратор BOSCH BFG 3000</h3>
             <p>22500 Р.</p>
             <p>15500 Р.</p>
           </div>
           <div>
+            <div>
+              <button type="button">Купить</button>
+              <button type="button">В закладки</button>
+            </div>
             <img src="img/item-bosch-bfg6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
             <h3>Перфоратор BOSCH BFG 6000</h3>
             <p>30500 Р.</p>
             <p>22500 Р.</p>
           </div>
           <div>
+            <div>
+              <button type="button">Купить</button>
+              <button type="button">В закладки</button>
+            </div>
             <img src="img/item-bosch-bfg2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
             <h3>Перфоратор BOSCH BFG 2000</h3>
             <p>12500 Р.</p>
@@ -220,9 +239,27 @@
           заехав в наш офис:
         </p>
         <div>
-          <img src="img/map.jpg" width="300" height="158" alt="Карта">
+          <button type="button">
+            <img src="img/map.jpg" width="300" height="158" alt="Магазин находится в г. Санкт-Петербурге по адресу ул. Б. Конюшенная, д. 19/8">
+          </button>
+          <div>
+            <button type="button" aria-label="Закрыть окно"></button>
+            <img src="img/modal-map.jpg" width="940" height="446" alt="Карта района, в котором находится магазин">
+          </div>
         </div>
         <button type="button">Заблудились? Напишите нам!</button>
+        <div>
+          <button type="button" aria-label="Закрыть окно"></button>
+          <form action="" method="POST">
+            <label for="name-surname">Ваше имя:</label>
+            <input type="text" name="name-surname" id="name-surname" placeholder="Имя Фамилия">
+            <label for="email">Ваш email:</label>
+            <input type="text" name="email" id="email" placeholder="email@example.com">
+            <label for="text">Текст письма:</label>
+            <textarea name="text" id="text" cols="" rows="">В свободной форме</textarea>
+            <input type="submit" value="Отправить">
+          </form>
+        </div>
       </section>
     </main>
     <footer>
@@ -256,9 +293,9 @@
           Все права защищены
         </p>
         <ul>
-          <li><a href="">VK</a></li>
-          <li><a href="">Facebook</a></li>
-          <li><a href="">Instagram</a></li>
+          <li><a href="" aria-label="VK"></a></li>
+          <li><a href="" aria-label="Facebook"></a></li>
+          <li><a href="" aria-label="Instagram"></a></li>
         </ul>
         <p>
           Обратная связь:
