@@ -52,6 +52,16 @@ img {
     background-color: #ca2c37;
 }
 
+.new::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 59px;
+    background-image: url("../img/new-flag.png");
+}
+
 /* ОБЩИЕ КЛАССЫ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ */
 .red-link {
     font-size: 14px;
@@ -76,10 +86,14 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 28px;
+    padding-right: 24px;
     background-color: #f9f5f0;
 }
 
 .section-header h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-size: 30px;
     font-weight: normal;
     color: #32425c;
@@ -441,7 +455,7 @@ img {
 .promo-item a {
     display: block;
     width: 135px;
-    margin-bottom: 22px;
+    margin-bottom: 21px;
     padding-top: 11px;
     padding-bottom: 10px;
     font-size: 14px;
@@ -462,7 +476,7 @@ img {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-.promo-item.new::after {
+/* .promo-item.new::after {
     content: "";
     position: absolute;
     top: 0;
@@ -470,15 +484,15 @@ img {
     width: 60px;
     height: 59px;
     background-image: url("../img/new-flag.png");
-    /* width: 88px;
+    width: 88px;
     height: 27px;
     font-size: 16px;
     line-height: 25px;
     text-align: center;
     background-color: #ff5357;
     clip-path: polygon(0 31px, 31px 0, 60px 0, 87px 27px);
-    transform: rotate(45deg);  */
-}
+    transform: rotate(45deg);  
+} */
 
 .materials {
     background-color: #ffbf47;
@@ -624,18 +638,33 @@ img {
 }
 
 /* ТОВАРЫ */
-.index-products-list {
-    display: flex;
+.popular-products {
+    margin-top: 53px;
 }
 
+.index-products-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 19px;
+}
+
+.popular-products .red-link {
+    padding: 10px 54px;
+}
 
 .product {
+    position: relative;
+    width: 220px;
     font-family: 'PT Sans', Arial, sans-serif; 
     font-weight: bold;
+    text-align: center;
     border: solid 1px #eaeaea;
 }
 
 .product .title {
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 0 25px;
     font-size: 18px;
     line-height: 20px;
 }
@@ -645,25 +674,50 @@ img {
 }
 
 .old-price {
+    margin-top: 11px;
+    margin-bottom: 8px;
+    min-height: 20px;
     color: #a9a9a9;
     text-decoration: line-through;
 }
 
 .current-price {
+    position: relative;
     width: 141px;
-    height: 38px;
+    margin: 8px auto;
+    margin-bottom: 20px;
+    padding: 10px 30px;
     color: #ffffff;
-    background-image: url("../img/price-button.svg")
+    background-color: #ee3643;
+    border-radius: 3px;
+}
+
+.current-price::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border: 19px solid white;
+    border-left-color: #ee3643;
 }
 
 .product-buttons {
     display: none;
+    padding-top: 44px;
+    min-height: 170px;
 }
 
 .product-buttons button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    padding: 7px 0;
+    width: 135px;
     font-family: 'Cuprum', Arial, sans-serif; 
     text-transform: uppercase;
-    border-radius: 3px;  /* уточнить */
+    border-radius: 3px; 
     cursor: pointer;
 }
 
@@ -671,6 +725,7 @@ img {
     color: #ffffff;
     background-color: #63a63e;
     border: none;
+    border-bottom: 3px solid #367315;
 }
 
 .buy:hover,
@@ -680,6 +735,7 @@ img {
 
 .buy:active {
     background-color: #518534;
+    border-bottom-color: #518534;
 }
 
 .bookmark {
@@ -710,6 +766,10 @@ img {
 }
 
 /* ПОПУЛЯРНЫЕ ПРОИЗВОДИТЕЛИ */
+.popular-manufacturers {
+    margin-top: 21px;
+}
+
 .manufacturers-list {
     display: flex;
     list-style: none;
