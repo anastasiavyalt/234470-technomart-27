@@ -86,14 +86,12 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 28px;
-    padding-right: 24px;
+    padding: 0 24px 0 28px; 
     background-color: #f9f5f0;
 }
 
 .section-header h2 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
     font-size: 30px;
     font-weight: normal;
     color: #32425c;
@@ -118,7 +116,7 @@ img {
 
 .header-logo {
     width: 220px;
-    padding: 13px 55px 6px 55px;
+    padding: 13px 55px 6px;
 }
 
 .search-form {
@@ -169,8 +167,7 @@ img {
 }
 
 .user-link {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 0;
     width: 150px;
     color: #ffffff;
 }
@@ -200,6 +197,7 @@ img {
 
 .bookmarks {
     position: relative;
+    padding-right: 27px;
     padding-left: 44px;
 }
 
@@ -215,6 +213,7 @@ img {
 
 .cart {
     position: relative;
+    padding-right: 28px;
     padding-left: 50px;
 }
 
@@ -250,14 +249,12 @@ img {
 
 .header-center .container {
     display: flex;
-    margin-top: 46px;
-    margin-bottom: 38px;
+    margin: 46px auto 38px;
     padding-left: 62px;
 }
 
 .shop-info {
-    margin-top: 4px;
-    margin-bottom: 0;
+    margin: 4px 0 0;
     width: 197px;
     font-size: 16px;
     font-style: italic;
@@ -291,8 +288,7 @@ img {
 }
 
 .contacts-address {
-    margin-top: 5px;
-    margin-bottom: 0;
+    margin: 5px 0 0;
     font-size: 14px;
     line-height: 24px;
     color: #32425c;
@@ -306,8 +302,7 @@ img {
 
 .profile-link {
     display: inline-block;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 0;
     font-size: 21px;
     color: #000000;
     background-color: #ffffff;
@@ -445,8 +440,7 @@ img {
 }
 
 .promo-item .title {
-    margin-top: 20px;
-    margin-bottom: 13px;
+    margin: 20px 0 13px;
     font-size: 24px;
     font-weight: bold;
     line-height: 30px;
@@ -456,6 +450,7 @@ img {
     display: block;
     width: 135px;
     margin-bottom: 21px;
+    padding: 11px 5px 10px;
     padding-top: 11px;
     padding-bottom: 10px;
     font-size: 14px;
@@ -475,24 +470,6 @@ img {
 .promo-item a:active {
 	background-color: rgba(0, 0, 0, 0.3);
 }
-
-/* .promo-item.new::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 59px;
-    background-image: url("../img/new-flag.png");
-    width: 88px;
-    height: 27px;
-    font-size: 16px;
-    line-height: 25px;
-    text-align: center;
-    background-color: #ff5357;
-    clip-path: polygon(0 31px, 31px 0, 60px 0, 87px 27px);
-    transform: rotate(45deg);  
-} */
 
 .materials {
     background-color: #ffbf47;
@@ -585,8 +562,7 @@ img {
 }
 
 .slide .title {
-    margin-top: 23px;
-    margin-bottom: 1px;
+    margin: 23px 0 1px;
     font-size: 36px;
     text-transform: uppercase;
 }
@@ -642,18 +618,20 @@ img {
     margin-top: 53px;
 }
 
-.index-products-list {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 19px;
-}
-
 .popular-products .red-link {
     padding: 10px 54px;
 }
 
+.index-products-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 19px;
+}
+
 .product {
     position: relative;
+    margin-bottom: 21px;
     width: 220px;
     font-family: 'PT Sans', Arial, sans-serif; 
     font-weight: bold;
@@ -662,8 +640,7 @@ img {
 }
 
 .product .title {
-    margin-top: 5px;
-    margin-bottom: 0;
+    margin: 5px 0 0;
     padding: 0 25px;
     font-size: 18px;
     line-height: 20px;
@@ -674,8 +651,8 @@ img {
 }
 
 .old-price {
-    margin-top: 11px;
-    margin-bottom: 8px;
+    margin: 11px 0 8px;
+    padding: 0 25px;
     min-height: 20px;
     color: #a9a9a9;
     text-decoration: line-through;
@@ -766,16 +743,25 @@ img {
 }
 
 /* ПОПУЛЯРНЫЕ ПРОИЗВОДИТЕЛИ */
-.popular-manufacturers {
-    margin-top: 21px;
+.popular-manufacturers .red-link {
+    padding: 10px 69px;
 }
 
 .manufacturers-list {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 0;
     list-style: none;
 }
 
 .manufacturer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 220px;
+    min-height: 145px;
     border: solid 1px #eaeaea;
 }
 
@@ -794,10 +780,17 @@ img {
 
 /* СЕРВИСЫ */
 .services {
+    margin-top: 65px;
     background-color: #f4f7f9;
 }
 
+.services .container {
+    padding-top: 68px;
+    padding-bottom: 99px;
+}
+
 .services h2 {
+    margin: 0 0 26px;
     font-size: 30px;
     font-weight: normal;
     text-transform: uppercase;
@@ -809,17 +802,48 @@ img {
     line-height: 24px;
 }
 
+.services-description {
+    max-width: 400px;
+    margin-bottom: 68px;
+}
+
+.services-container {
+    display: flex;
+}
+
 .services-slider {
+    position: relative;
+    margin: 0 80px 0 0;
+    padding-left: 0;
     list-style: none;
 }
 
+.services-slider::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: -46px;
+    right: 0;
+    width: 10px;
+    height: 279px;
+    background-image: url("../img/shadow.png");
+}
+
+.services-slider li {
+    width: 240px;
+}
+
 .services-slider-button {
+    padding: 16px 22px;
     width: 100%;
     font-size: 21px;
+    font-weight: bold;
     line-height: 30px;
     color: #ffffff;
+    text-align: left;
     background-color: #32425c;
     border: none;
+    border-bottom: solid 1px #293449;
     cursor: pointer;
 }
 
@@ -838,11 +862,36 @@ img {
     background-color: #ffffff;
 }
 
+.service-slide {
+    position: relative;
+    display: none;
+}
+
+.service-slide::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: -344px;
+    width: 468px;
+    height: 261px;
+    background-image: url("../img/delivery.png");
+}
+
+
+.service-slide.active {
+    display: block;
+}
+
 .service-slide .title {
+    margin: 0 0 24px;
     font-size: 36px;
     font-weight: normal;
     text-transform: uppercase;
     color: #32425c;
+}
+
+.delivery-text {
+    width: 275px;
 }
 
 /* ОБЩИЕ СТИЛИ ДЛЯ ДЛЯ СЕКЦИЙ О КОМПАНИИ И КОНТАКТЫ */
