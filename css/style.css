@@ -200,9 +200,13 @@ img {
 	opacity: 0.5;
 }
 
+.not-empty {
+    background-color: #ee3643;
+}
+
 .bookmarks {
     position: relative;
-    padding-right: 27px;
+    padding-right: 10px;
     padding-left: 44px;
 }
 
@@ -218,7 +222,7 @@ img {
 
 .cart {
     position: relative;
-    padding-right: 28px;
+    padding-right: 10px;
     padding-left: 50px;
 }
 
@@ -350,10 +354,73 @@ img {
 }
 
 /* ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНИЛСЯ */
+.profile-info {
+    margin-left: 51px;
+}
+
+.profile-info a:hover,
+.profile-info a:focus {
+    opacity: 1;
+}
+
+.profile-info a:active {
+    color: #32425c;
+    opacity: 0.3;
+}
+
+.profile-general {
+    padding: 12px 10px 11px 13px;
+    width: 299px;
+    background-color: #ffffff;
+}
+
 .profile-general a {
     font-size: 21px;
     color: #000000;
-    background-color: #ffffff;
+}
+
+.enter-profile {
+    position: relative;
+    margin-right: 27px;
+    padding: 0 5px 0 34px;
+}
+
+.enter-profile::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 18px;
+    background-image: url("../img/icon-user.svg");
+    opacity: 0.3;
+}
+
+.enter-profile:hover::before,
+.enter-profile:focus::before {
+    opacity: 1;
+}
+
+.enter-profile:active::before {
+    opacity: 0.3;
+}
+
+.logout {
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 17px;
+    background-image: url("../img/icon-logout.svg");
+    opacity: 0.3;
+}
+
+.logout:hover,
+.logout:focus {
+    opacity: 1;
+}
+
+.profile-logged-links {
+    margin: 8px 0 0 17px;
+    max-width: 282px;
 }
 
 .profile-logged-links a {
@@ -363,13 +430,31 @@ img {
     text-decoration: underline;
 }
 
+.profile-logged-links a::after {
+    content: "";
+    display: inline-block;
+    margin: 0 9px 2px 15px;
+    width: 4px;
+    height: 5px;
+    background-color: #32425c;
+    border-radius: 50%;
+}
+
+.profile-logged-links a:last-child::after {
+    display: none;
+}
+
 .profile-logged-links a:hover,
 .profile-logged-links a:focus {
     color: #ee3643;
 }
 
-.profile-info a:active {
-    opacity: 0.3;
+.profile-logged-links a:active {
+    color: #32425c;
+}
+
+.profile-logged-links a:active::after {
+    opacity: 1;
 }
 
 /* ---- */
