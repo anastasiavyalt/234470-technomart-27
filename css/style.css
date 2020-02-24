@@ -158,6 +158,10 @@ img {
     color: #ffffff;
 }
 
+.search-input:-ms-input-placeholder {
+    color: #ffffff;
+}
+
 .search-input:hover {
     background-color: #212a3a;
 }
@@ -940,7 +944,7 @@ img {
 }
 
 .transport-companies {
-    margin: 0 0 47px;
+    margin: 0 0 49px;
     padding-left: 36px;
     font-size: 18px;
     line-height: 20px;
@@ -973,18 +977,19 @@ img {
 /* КОНТАКТЫ */
 .contacts p:first-of-type {
     margin-bottom: 29px;
-    width: 179px;
+    min-width: 179px;
 }
 
 .map {
     margin-bottom: 40px;
+    padding: 0 0;
     border: none;
     cursor: pointer;
 }
 
 .contacts .red-link {
     width: 300px;
-    padding: 11px 59px 10px 63px;
+    padding: 10px 59px 10px 63px;
 }
 
 .popup-contact-us {
@@ -1004,8 +1009,13 @@ img {
 }
 
 .footer-logo {
-    margin-right: 168px;
+    margin-right: 167px;
     padding: 20px 41px 17px;
+}
+
+.footer-logo img {
+    width: 138px;
+	height: 23px;
 }
 
 .main-footer ul {
@@ -1014,7 +1024,6 @@ img {
 
 .footer-nav {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 0;
     padding-left: 0;
@@ -1041,7 +1050,7 @@ img {
 }
 
 .footer-first-nav {
-    max-width: 552px;
+    max-width: 553px;
 }
 
 .footer-first-nav a {
@@ -1055,13 +1064,13 @@ img {
 }
 
 .footer-contacts {
-    margin: 0 91px 0 0;
+    margin: 0 89px 0 0;
     font-size: 18px;
     line-height: 24px;
 }
 
 .footer-second-nav {
-    max-width: 526px;
+    max-width: 530px;
 }
 
 .footer-second-nav a {
