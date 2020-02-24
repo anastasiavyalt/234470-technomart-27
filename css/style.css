@@ -71,6 +71,7 @@ img {
     background-color: #ee3643;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .red-link:hover, 
@@ -756,13 +757,18 @@ img {
 }
 
 .manufacturer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 20px;
     width: 220px;
     min-height: 145px;
     border: solid 1px #eaeaea;
+}
+
+.manufacturer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
 }
 
 .manufacturer:hover,
@@ -780,13 +786,13 @@ img {
 
 /* СЕРВИСЫ */
 .services {
-    margin-top: 65px;
+    margin-top: 67px;
     background-color: #f4f7f9;
 }
 
 .services .container {
-    padding-top: 68px;
-    padding-bottom: 99px;
+    padding-top: 66px;
+    padding-bottom: 97px;
 }
 
 .services h2 {
@@ -804,7 +810,7 @@ img {
 
 .services-description {
     max-width: 400px;
-    margin-bottom: 68px;
+    margin-bottom: 66px;
 }
 
 .services-container {
@@ -877,7 +883,6 @@ img {
     background-image: url("../img/delivery.png");
 }
 
-
 .service-slide.active {
     display: block;
 }
@@ -895,8 +900,21 @@ img {
 }
 
 /* ОБЩИЕ СТИЛИ ДЛЯ ДЛЯ СЕКЦИЙ О КОМПАНИИ И КОНТАКТЫ */
+.about-contacts {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 78px;
+    padding-bottom: 86px;
+}
+
+.about,
+.contacts {
+    min-height: 368px;
+}
+
 .about h2,
 .contacts h2 {
+    margin: 0 0 28px;
     font-size: 30px;
     font-weight: normal;
     text-transform: uppercase;
@@ -904,16 +922,48 @@ img {
 
 .about p,
 .contacts p {
+    margin-bottom: 24px;
     font-family: 'PT Sans', Arial, sans-serif; 
     font-size: 13px;
     line-height: 24px;
 }
 
+
 /* О КОМПАНИИ */
+.about {
+    margin-right: 120px;
+    min-width: 519px;
+}
+
+.about p:last-of-type {
+    margin-bottom: 20px;
+}
+
 .transport-companies {
+    margin: 0 0 47px;
+    padding-left: 36px;
     font-size: 18px;
     line-height: 20px;
-    /* list-style-type: ; */
+    list-style: none; 
+}
+
+.transport-companies li {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.transport-companies li::before {
+    position: absolute;
+    content: "";
+    top: 48%;
+    left: -36px;
+    width: 25px;
+    height: 2px;
+    background-color: #ee3643;
+}
+
+.about .red-link {
+    padding: 11px 40px 10px 41px;
 }
 
 .popup-map {
@@ -921,6 +971,22 @@ img {
 }
 
 /* КОНТАКТЫ */
+.contacts p:first-of-type {
+    margin-bottom: 29px;
+    width: 179px;
+}
+
+.map {
+    margin-bottom: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.contacts .red-link {
+    width: 300px;
+    padding: 11px 59px 10px 63px;
+}
+
 .popup-contact-us {
     display: none;
 }
@@ -931,13 +997,37 @@ img {
     background-color: #32425c;
 }
 
+.footer-top {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    margin-right: 168px;
+    padding: 20px 41px 17px;
+}
+
 .main-footer ul {
     list-style: none;
 }
 
 .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0;
+    padding-left: 0;
     font-size: 18px;
     line-height: 24px;
+}
+
+.footer-nav li {
+    margin-right: 60px;
+}
+
+.footer-nav li:last-child {
+    margin-right: 0;
 }
 
 .footer-nav a:hover,
@@ -950,33 +1040,32 @@ img {
     opacity: 0.5;
 }
 
+.footer-first-nav {
+    max-width: 552px;
+}
+
 .footer-first-nav a {
     color: #ffffff;
 }
 
-.footer-second-nav a {
-    color: #ffd180;
+.footer-center {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px 0 49px;
 }
 
 .footer-contacts {
+    margin: 0 91px 0 0;
     font-size: 18px;
     line-height: 24px;
 }
 
-.social a {
-    background-color: #212a3a;
-    border-radius: 50%;
-}  
+.footer-second-nav {
+    max-width: 526px;
+}
 
-.social a {
-    background-color: #212a3a;
-    border-radius: 50%;
-} 
-
-.social a:hover,
-.social a:focus,
-.social a:active {
-    background-color: #ee3643;
+.footer-second-nav a {
+    color: #ffd180;
 }
 
 .footer-bottom {
@@ -985,9 +1074,79 @@ img {
     background-color: #293449;
 }
 
+.footer-bottom .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 37px;
+    padding-bottom: 35px;
+}
+
+.footer-bottom p,
+.footer-bottom ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.copyright {
+    margin-right: 161px;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 119px;
+    padding-left: 0;
+}
+
+.social a {
+    display: block;
+    margin-left: 3px;
+    width: 42px;
+    height: 42px;
+    background-color: #212a3a;
+    border-radius: 50%;
+}  
+
+.social li:last-child {
+    margin-left: 0px;
+}  
+
+.social a:hover,
+.social a:focus,
+.social a:active {
+    background-color: #ee3643;
+}
+
+.vk {
+    background: url("../img/icon-vk.svg") no-repeat center;
+}
+
+.facebook {
+    background: url("../img/icon-fb.svg") no-repeat center;
+}
+
+.instagram {
+    background: url("../img/icon-insta.svg") no-repeat center;
+}
+
+.contact-developer {
+    margin-right: 53px;
+}
+
 .contact-developer a,
 .developed-by a {
     color: #ffd180;
+}
+
+.contact-developer a:hover,
+.developed-by a:hover {
+    text-decoration: underline;
+}
+
+.contact-developer a:active,
+.developed-by a:active {
+    text-decoration: none;
+    color: #ee3643;
 }
 
 /* СТРАНИЦА КАТАЛОГА */
