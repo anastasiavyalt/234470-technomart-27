@@ -200,10 +200,6 @@ img {
 	opacity: 0.5;
 }
 
-.not-empty {
-    background-color: #ee3643;
-}
-
 .bookmarks {
     position: relative;
     padding-right: 10px;
@@ -234,6 +230,19 @@ img {
     width: 15px;
     height: 15px;
     background-image: url("../img/icon-cart.svg");
+}
+
+.not-empty {
+    background-color: #ee3643;
+}
+
+.not-empty:hover,
+.not-empty:focus {
+    background-color: #ca2c37;
+}
+
+.not-empty:active {
+    background-color: #ba2732;
 }
 
 .order {
@@ -687,13 +696,13 @@ img {
 
 .slider-previous {
     left: 25px;
-    background-image: url("../img/icon-slide-arrow.svg");
+    background-image: url("../img/icon-right-arrow.svg");
+    transform: rotate(180deg);
 }
 
 .slider-next {
     right: 20px;
-    background-image: url("../img/icon-slide-arrow.svg");
-    transform: rotate(180deg);
+    background-image: url("../img/icon-right-arrow.svg");
 }
 
 .slider .red-link {
@@ -1255,7 +1264,33 @@ img {
 
 /* ХЛЕБНЫЕ КРОШКИ */
 .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 21px 0 20px;
+    padding-left: 0;
     list-style: none;
+}
+
+.breadcrumbs-item:first-child a {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 14px;
+    height: 12px;
+    background: url("../img/icon-home.svg") no-repeat;
+}
+
+.breadcrumbs-item::after {
+    content: "";
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0 17px;
+    width: 8px;
+    height: 12px;
+    background: url("../img/icon-right-small.svg") no-repeat;
+}
+
+.breadcrumbs-item:last-child::after {
+    display: none;
 }
 
 .breadcrumbs a {
@@ -1267,6 +1302,8 @@ img {
 
 /* ЗАГОЛОВОК СТРАНИИЦЫ */
 .product-type {
+    margin-bottom: 20px;
+    padding: 30px 0 28px 28px;
     font-size: 30px;
     font-weight: normal;
     text-transform: uppercase;
@@ -1274,9 +1311,21 @@ img {
     background-color: #f2f6f8;
 }
 
+.catalogue-flex-container {
+    display: flex;
+}
+
 /* ФИЛЬТР */
+.filter-products {
+    margin-right: 20px;
+    width: 220px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .filter-products h2,
 .sort-products h2 {
+    margin-top: 0;
     font-size: 13px;
     font-weight: normal;
     line-height: 18px;
@@ -1284,6 +1333,7 @@ img {
 }
 
 .filter-products h2 {
+    padding: 10px 5px 10px 19px;
     background-color: #f7f3ec;
     border-radius: 3px;
 }
@@ -1291,11 +1341,17 @@ img {
 .filter-form legend {
     line-height: 30px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .filter-form fieldset {
+    padding: 0 0;
     border: none;
     border-bottom: solid 1px #c5c5c5;
+}
+
+.filter-form fieldset:last-of-type {
+    border: none;
 }
 
 .filter-form label {
@@ -1304,7 +1360,31 @@ img {
     text-transform: uppercase;
 }
 
-.price-field input {
+.price-field {
+    margin-bottom: 16px;
+}
+
+.price-field legend {
+    margin-bottom: 13px;
+}
+
+.price-range {
+    -webkit-appearance: none;  
+    appearance: none;
+    margin-bottom: 9px;
+    padding: 30px 20px;
+    width: 100%;
+    background-color: #f7f3ec;
+    border-radius: 3px;
+}
+
+.price-field input[type="text"] {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 25px;
+    width: 95px;
+    min-height: 38px;
+    text-align: center;
     background-color: #f7f3ec;
     border: none;
     border-radius: 3px;
@@ -1315,10 +1395,127 @@ img {
     line-height: 18px;
 }
 
+.price-dash {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 1px 0;
+}
+
+.manufacturers-field,
+.power-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.manufacturers-field {
+    margin-bottom: 16px;
+}
+
+.manufacturers-field legend {
+    margin: 16px 0 13px;
+}
+
+.manufacturer-checkbox,
+.power-radio {
+    position: absolute;
+    opacity: 0;
+}
+
+.manufacturer-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    cursor: pointer;
+}
+
+.manufacturer-label:last-child {
+    margin-bottom: 21px;
+}
+
+.checkmark {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+    border: solid 2px #000000;
+    border-radius: 3px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.manufacturer-checkbox:checked ~ .checkmark {
+    margin-right: 8px;
+    width: 27px;
+    height: 23px;
+    background: url("../img/checkbox-on.svg");
+    border: none;
+    opacity: 0.3;
+}
+
+.maufacturer-label:hover .checkmark {
+    opacity: 0.5;
+}
+
+.power-field legend {
+    margin: 16px 0 12px;
+}
+
+.power-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.power-label:last-child {
+    margin-bottom: 0;
+}
+
+.radiomark {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    border: solid 4px #000000;
+    border-radius: 50%;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.radiomark::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: none;
+    width: 9px;
+    height: 9px;
+    background-color: #000000;
+    border: solid 1px #000000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.power-radio:checked ~ .radiomark::after {
+    display: block;
+}
+
+.power-label:hover .radiomark {
+    opacity: 0.5;
+}
+
 .filter-form input[type="submit"] {
+    margin-top: 75px;
+    padding: 8px 5px;
+    width: 140px;
+    text-align: center;
     font-size: 13px;
     line-height: 18px;
     text-transform: uppercase;
+    background-color: #ffffff;
     border: solid 1px #e5e5e5;
     border-radius: 3px;
     cursor: pointer;
@@ -1357,6 +1554,12 @@ img {
 }
 
 /* КАТАЛОГ: ТОВАРЫ*/
+.catalogue-products-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .added-to-cart-popup {
     display: none;
 }
@@ -1398,11 +1601,12 @@ img {
 
 /* ИНФОРМАЦИЯ О ТИПЕ ТОВАРА */
 .about-product-type {
+    padding: 67px 0 73px;
     background-color: #f4f7f9;
 }
 
-
 .about-product-type h2 {
+    margin: 0 0 30px;
     font-family: 'Cuprum', Arial, sans-serif; 
     font-size: 30px;
     font-weight: normal;
@@ -1410,6 +1614,7 @@ img {
 }
 
 .about-product-type p {
+    margin: 0 0 0;
     font-size: 13px;
     line-height: 24px;
 }
