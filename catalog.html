@@ -130,15 +130,23 @@
               <input type="submit" value="Показать">
             </form>
           </section>
-          <div class="catalogue-flex-item">
+          <div class="catalogue-right">
             <section class="sort-products">
               <h2>Сортировка:</h2>
-              <div>
-                <a class="sort-by sorted" href="">По цене</a>
+              <div class="sort-type">
+                <a class="sort-by active" href="">По цене</a>
                 <a class="sort-by" href="">По типу</a>
                 <a class="sort-by" href="">По функционалу</a>
-                <a class="acsending" href="" aria-label="По возрастанию"></a>
-                <a class="descending" href="" aria-label="По убыванию"></a>
+              </div>
+              <div class="sort-direction">
+                <a class="ascending sorted" href="">
+                  <span class="visually-hidden">По возрастанию</span>
+                  <svg class="sort-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="10"><path fill="#c5c5c5" d="M5.5 0L0 10h11z"/></svg>
+                </a>
+                <a class="descending" href="">
+                  <span class="visually-hidden">По убыванию</span>
+                  <svg class="sort-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="10"><path fill="#c5c5c5" d="M5.5 0L0 10h11z"/></svg>
+                </a>
               </div>
             </section>
             <section class="catalogue-products">
@@ -164,13 +172,14 @@
                   <p class="old-price">30500 Р.</p>
                   <p class="current-price">22500 Р.</p>
                 </div>
-                <div class="product">
+                <div class="product new">
                   <div class="product-buttons">
                     <button class="buy" type="button">Купить</button>
                     <button class="bookmark" type="button">В закладки</button>
                   </div>
                   <img src="img/item-bosch-bfg2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
                   <h3 class="title">Перфоратор BOSCH BFG 2000</h3>
+                  <p class="old-price"></p>
                   <p class="current-price">12500 Р.</p>
                 </div>
                 <div class="product">
@@ -183,7 +192,7 @@
                   <p class="old-price">22500 Р.</p>
                   <p class="current-price">15500 Р.</p>
                 </div>
-                <div class="product">
+                <div class="product new">
                   <div class="product-buttons">
                     <button class="buy" type="button">Купить</button>
                     <button class="bookmark" type="button">В закладки</button>
@@ -200,9 +209,10 @@
                   </div>
                   <img src="img/item-bosch-bfg2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
                   <h3 class="title">Перфоратор BOSCH BFG 2000</h3>
+                  <p class="old-price"></p>
                   <p class="current-price">12500 Р.</p>
                 </div>
-                <div class="product">
+                <div class="product new">
                   <div class="product-buttons">
                     <button class="buy" type="button">Купить</button>
                     <button class="bookmark" type="button">В закладки</button>
@@ -229,6 +239,7 @@
                   </div>
                   <img src="img/item-bosch-bfg2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
                   <h3 class="title">Перфоратор BOSCH BFG 2000</h3>
+                  <p class="old-price"></p>
                   <p class="current-price">12500 Р.</p>
                 </div>
               </div>
@@ -242,7 +253,7 @@
                 <li><a class="page current-page" href="#">1</a></li>
                 <li><a class="page" href="">2</a></li>
                 <li><a class="page" href="">3</a></li>
-                <li><a class="page" href="">Следующая</a></li>
+                <li><a class="page next" href="">Следующая</a></li>
               </ul>
             </section>
           </div>
