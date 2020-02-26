@@ -1,5 +1,5 @@
 /* SLIDERS */
-
+console.log("ffff");
 function Slider(slidesClass, bulletsClass, prevClass, nextClass) {
     this.index = 0;
     this.slidesClass = slidesClass;
@@ -8,7 +8,7 @@ function Slider(slidesClass, bulletsClass, prevClass, nextClass) {
     let self = this;
 
     let bullets = document.querySelectorAll(bulletsClass);
-    bullets.forEach((bullet, index) => {
+    Array.prototype.slice.call(bullets).forEach(function(bullet, index) {
         bullet.addEventListener('click', function() {
             self.showSlides(index);
         });
@@ -19,17 +19,17 @@ function Slider(slidesClass, bulletsClass, prevClass, nextClass) {
         this.nextClass = nextClass;
 
         let prev = document.querySelector(prevClass);
-        prev.addEventListener("click", () => {
+        prev.addEventListener("click", function() {
             self.showSlides(self.index - 1);
         });
 
         let next = document.querySelector(nextClass);
-        next.addEventListener("click", () => {
+        next.addEventListener("click", function() {
             self.showSlides(self.index + 1);
         });
     }
 
-    this.showSlides = function(i = 0) {
+    this.showSlides = function(i) {
         let slides = document.querySelectorAll(self.slidesClass);
         slides[self.index].classList.remove("active");
 
@@ -52,7 +52,7 @@ function Slider(slidesClass, bulletsClass, prevClass, nextClass) {
 }
 
 let promoSlider = new Slider(".slide", ".pagination-bullet", ".slider-previous", ".slider-next");
-promoSlider.showSlides();
+promoSlider.showSlides(0);
 
 let servicesSlider = new Slider(".service-slide", ".services-slider-button");
-servicesSlider.showSlides();
+servicesSlider.showSlides(0);
