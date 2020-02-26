@@ -1,3 +1,8 @@
+@keyframes change-slide {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}
+
 html {
     box-sizing: border-box;
 }
@@ -570,11 +575,11 @@ img {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-.materials {
+.promo-item.materials {
     background-color: #ffbf47;
 }
 
-.materials::before {
+.promo-item.materials::before {
     content: "";
     position: absolute;
     top: 31px;
@@ -584,11 +589,11 @@ img {
     background-image: url("../img/icon-materials.svg");
 }
 
-.instruments {
+.promo-item.instruments {
     background-color: #3bbce3;
 }
 
-.instruments::before {
+.promo-item.instruments::before {
     content: "";
     position: absolute;
     top: 33px;
@@ -598,11 +603,11 @@ img {
     background-image: url("../img/icon-tool.svg");
 }
 
-.machinery {
+.promo-item.machinery {
     background-color: #dc91d8;
 }
 
-.machinery::before {
+.promo-item.machinery::before {
     content: "";
     position: absolute;
     top: 31px;
@@ -612,11 +617,11 @@ img {
     background-image: url("../img/icon-machinery.svg");
 }
 
-.sale {
+.promo-item.sale {
     background-color: #8ed78f;
 }
 
-.sale::before {
+.promo-item.sale::before {
     content: "";
     position: absolute;
     top: 26px;
@@ -626,11 +631,11 @@ img {
     background-image: url("../img/icon-sale.svg");
 }
 
-.delivery {
+.promo-item.delivery {
     background-color: #ffc047;
 }
 
-.delivery::before {
+.promo-item.delivery::before {
     content: "";
     position: absolute;
     top: 32px;
@@ -654,6 +659,7 @@ img {
     display: none;
     overflow: hidden;
     padding-left: 25px;
+    animation: change-slide 1s;
 }
 
 .slide.active {
@@ -703,6 +709,35 @@ img {
 .slider-next {
     right: 20px;
     background-image: url("../img/icon-right-arrow.svg");
+}
+
+.slider-pagination {
+    position: absolute;
+    top: 220px;
+    left: 297px;
+}
+
+.pagination-bullet {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagination-bullet.active::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    background-color: #ee3643;
+    border-radius: 50%;
 }
 
 .slider .red-link {
@@ -890,7 +925,7 @@ img {
 
 .services .container {
     padding-top: 66px;
-    padding-bottom: 97px;
+    padding-bottom: 86px;
 }
 
 .services h2 {
@@ -913,6 +948,7 @@ img {
 
 .services-container {
     display: flex;
+    min-height: 200px;
 }
 
 .services-slider {
@@ -956,13 +992,8 @@ img {
     background-color: #293449;
 }
 
-.services-current-slide {
+.services-slider-button.active {
     color: #32425c;
-    background-color: #ffffff;
-}
-
-.services-current-slide:hover,
-.services-current-slide:focus {
     background-color: #ffffff;
 }
 
@@ -974,11 +1005,26 @@ img {
 .service-slide::after {
     content: "";
     position: absolute;
-    top: 24px;
-    right: -344px;
     width: 468px;
     height: 261px;
+}
+
+.service-slide.delivery::after {
+    top: 24px;
+    left: 151px;
     background-image: url("../img/delivery.png");
+}
+
+.service-slide.guarantee::after {
+    top: 0;
+    left: 239px;
+    background-image: url("../img/guarantee.png");
+}
+
+.service-slide.credit::after {
+    top: 0;
+    left: 165px;
+    background-image: url("../img/credit.png");
 }
 
 .service-slide.active {
@@ -995,6 +1041,14 @@ img {
 
 .delivery-text {
     width: 275px;
+}
+
+.credit-text {
+    width: 279px;
+}
+
+.guarantee-text {
+    width: 379px;
 }
 
 /* ОБЩИЕ СТИЛИ ДЛЯ ДЛЯ СЕКЦИЙ О КОМПАНИИ И КОНТАКТЫ */
