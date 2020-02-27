@@ -268,21 +268,31 @@
           <button class="map" type="button">
             <img src="img/map.jpg" width="300" height="158" alt="Магазин находится в г. Санкт-Петербурге по адресу ул. Б. Конюшенная, д. 19/8">
           </button>
-          <div class="popup-map">
+          <div class="modal popup-map">
             <button type="button" aria-label="Закрыть окно"></button>
             <img src="img/modal-map.jpg" width="940" height="446" alt="Карта района, в котором находится магазин">
           </div>
-          <button class="red-link" type="button">Заблудились? Напишите нам!</button>
-          <div class="popup-contact-us">
-            <button type="button" aria-label="Закрыть окно"></button>
-            <form action="" method="POST">
-              <label for="name-surname">Ваше имя:</label>
-              <input type="text" name="name-surname" id="name-surname" placeholder="Имя Фамилия">
-              <label for="email">Ваш email:</label>
-              <input type="text" name="email" id="email" placeholder="email@example.com">
-              <label for="text">Текст письма:</label>
-              <textarea name="text" id="text" cols="" rows="">В свободной форме</textarea>
-              <input type="submit" value="Отправить">
+          <button class="red-link popup-contact-link" type="button">Заблудились? Напишите нам!</button>
+          <div class="modal popup-contact-us">
+            <button class="modal-close" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+            <form class="contact-us-form" action="" method="POST">
+              <div class="input-area">
+                <label for="name-surname">
+                  <span class="label-span">Ваше имя:</span>
+                  <input type="text" name="name-surname" id="name-surname" placeholder="Имя Фамилия">
+                </label>
+                <label for="email">
+                  <span class="label-span">Ваш email:</span>
+                  <input type="email" name="email" id="email" placeholder="email@example.com">
+                </label>
+                <label for="text">
+                  <span class="label-span">Текст письма:</span>
+                  <textarea name="text" id="text" placeholder="В свободной форме"></textarea>
+                </label>
+              </div>
+              <div class="submit-area">
+                <input class="red-link" type="submit" value="Отправить">
+              </div>
             </form>
           </div>
         </section>

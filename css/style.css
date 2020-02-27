@@ -3,6 +3,35 @@
     to {opacity: 1}
 }
 
+@keyframes appear {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+  
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
 html {
     box-sizing: border-box;
 }
@@ -161,11 +190,19 @@ img {
 
 .search-input::placeholder {
     color: #ffffff;
+    opacity: 1;
 }
 
 .search-input:-ms-input-placeholder {
     color: #ffffff;
+    opacity: 1;
 }
+
+.search-input::-webkit-input-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
 
 .search-input:hover {
     background-color: #212a3a;
@@ -1119,7 +1156,51 @@ img {
 }
 
 .popup-map {
+
+}
+
+.modal {
+    position: fixed;
+    z-index: 5;
     display: none;
+}
+
+.modal-show {
+    display: block;
+    animation: appear 0.5s;
+}
+
+.modal-close {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    padding: 0 0;
+    width: 21px;
+    height: 21px;
+    font-size: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+  
+.modal-close::before,
+.modal-close::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -1px;
+    width: 25px;
+    height: 4px;
+    background-color: #ee3643;
+    border-radius: 2px;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
 }
 
 /* КОНТАКТЫ */
@@ -1135,13 +1216,101 @@ img {
     cursor: pointer;
 }
 
-.contacts .red-link {
+.popup-contact-link {
     width: 300px;
     padding: 10px 59px 10px 63px;
 }
 
 .popup-contact-us {
-    display: none;
+    top: 50%;
+    left: 50%;
+    margin-top: -217px; 
+    margin-left: -310px;
+    width: 620px;
+    background-color: #ffffff;
+    border-top: solid 7px #ee3643;
+    box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+}
+
+.popup-contact-us label {
+    font-size: 18px;
+}
+
+.popup-contact-us .label-span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 45px 80px 35px;
+}
+
+.input-area input,
+.input-area textarea {
+    padding: 8px 10px;
+    border: solid 2px #dee3e4;
+    border-radius: 3px;
+}
+
+.input-area input::placeholder,
+.input-area textarea::placeholder {
+    font-family: 'PT Sans', Arial, sans-serif; 
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.input-area input:-ms-input-placeholder,
+.input-area textarea:-ms-input-placeholder {
+    font-family: 'PT Sans', Arial, sans-serif; 
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.input-area input::-webkit-input-placeholder,
+.input-area textarea::-webkit-input-placeholder {
+    font-family: 'PT Sans', Arial, sans-serif; 
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.input-area input:hover,
+.input-area textarea:hover {
+    border-color: #b5b5b5;
+}
+
+.input-area input:focus,
+.input-area textarea:focus {
+    border-color: #ee3643;
+    outline: none;
+}
+
+.popup-contact-us input[type="text"],
+.popup-contact-us input[type="email"] {
+    margin-bottom: 22px;
+    width: 220px;
+}
+
+.popup-contact-us textarea {
+    width: 460px;
+    height: 114px;
+    resize: none;
+}
+
+.submit-area {
+    padding: 37px 80px;
+    background-color: #f4f4f4;
+}
+
+.popup-contact-us input[type="submit"] {
+    padding: 10px 199px;
+    width: 460px;
+}
+
+.contact-us-error {
+    animation: shake 0.6s;
 }
 
 /* FOOTER */
