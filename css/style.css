@@ -42,8 +42,7 @@ html {
 }
 
 body {
-  box-sizing: border-box;
-  font-family: 'Cuprum', Arial, sans-serif;
+  font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 1;
   color: #000000;
@@ -127,6 +126,7 @@ img {
 
 .section-header h2 {
   margin: 30px 0;
+  width: 600px;
   font-size: 30px;
   font-weight: normal;
   color: #32425c;
@@ -137,6 +137,7 @@ img {
 /* HEADER */
 .main-header {
   padding-bottom: 47px;
+  min-width: 960px;
   background-color: #f4f7f9;
 }
 
@@ -357,16 +358,24 @@ img {
 
 /* ПОЛЬЗОВАТЕЛЬ НЕ ЗАЛОГИНИЛСЯ */
 .profile-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   margin-left: 69px;
+  width: 281px;
 }
 
 .profile-link {
-  display: inline-block;
-  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 4px;
   padding: 12px 0;
   font-size: 21px;
   color: #000000;
   background-color: #ffffff;
+}
+
+.profile-link:nth-child(2n) {
+  margin-right: 0;
 }
 
 .profile-link:hover,
@@ -380,9 +389,9 @@ img {
 
 .login {
   position: relative;
-  margin-right: 5px;
   padding-left: 47px;
   padding-right: 26px;
+  width: 121px;
 }
 
 .login::before {
@@ -403,6 +412,7 @@ img {
 .register {
   padding-left: 24px;
   padding-right: 24px;
+  width: 150px;
 }
 
 /* ПОЛЬЗОВАТЕЛЬ ЗАЛОГИНИЛСЯ */
@@ -797,19 +807,26 @@ img {
 
 .index-products-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 19px;
 }
 
 .product {
   position: relative;
-  margin-bottom: 21px;
+  margin: 0 20px 21px 0;
   width: 220px;
-  font-family: 'PT Sans', Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: bold;
   text-align: center;
   border: solid 1px #eaeaea;
+}
+
+.popular-products .product:nth-child(4n) {
+  margin-right: 0;
+}
+
+.product img {
+  display: block;
 }
 
 .product .title {
@@ -856,7 +873,7 @@ img {
 .product-buttons {
   display: none;
   padding-top: 44px;
-  min-height: 170px;
+  height: 170px;
 }
 
 .product-buttons button {
@@ -865,7 +882,7 @@ img {
   margin-bottom: 7px;
   padding: 7px 0;
   width: 135px;
-  font-family: 'Cuprum', Arial, sans-serif;
+  font-family: "Cuprum", Arial, sans-serif;
   text-transform: uppercase;
   border-radius: 3px;
   cursor: pointer;
@@ -905,6 +922,7 @@ img {
 
 .product:hover {
   box-shadow: 0 10px 25px 0 rgba(41, 52, 73, 0.5);
+  border-color: #ffffff;
 }
 
 .product:hover .product-buttons {
@@ -922,17 +940,20 @@ img {
 
 .manufacturers-list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   padding-left: 0;
   list-style: none;
 }
 
 .manufacturer {
-  margin-bottom: 20px;
+  margin: 0 20px 20px 0;
   width: 220px;
   min-height: 145px;
   border: solid 1px #eaeaea;
+}
+
+.manufacturer:nth-child(4n) {
+  margin-right: 0;
 }
 
 .manufacturer a {
@@ -959,7 +980,9 @@ img {
 /* СЕРВИСЫ */
 .services {
   margin-top: 67px;
+  min-width: 960px;
   background-color: #f4f7f9;
+  overflow: hidden;
 }
 
 .services .container {
@@ -975,7 +998,7 @@ img {
 }
 
 .services p {
-  font-family: 'PT Sans', Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
 }
@@ -1022,6 +1045,7 @@ img {
   text-align: left;
   background-color: #32425c;
   border: none;
+  border-top: solid 1px #405069;
   border-bottom: solid 1px #293449;
   cursor: pointer;
 }
@@ -1034,6 +1058,7 @@ img {
 .services-slider-button.active {
   color: #32425c;
   background-color: #ffffff;
+  border-color: #ffffff;
 }
 
 .service-slide {
@@ -1056,19 +1081,19 @@ img {
 
 .service-slide.guarantee::after {
   top: 0;
-  left: 239px;
+  left: 235px;
   background-image: url("../img/guarantee.png");
 }
 
 .service-slide.credit::after {
   top: 0;
-  left: 165px;
+  left: 160px;
   background-image: url("../img/credit.png");
 }
 
 .credit .red-link {
   display: block;
-  margin-top: 31px;
+  margin: 31px 0 0;
   padding: 12px 44px;
   width: 195px;
 }
@@ -1090,7 +1115,7 @@ img {
 }
 
 .credit-text {
-  width: 279px;
+  width: 280px;
 }
 
 .guarantee-text {
@@ -1122,7 +1147,7 @@ img {
 .contacts p {
   margin-top: 0;
   margin-bottom: 24px;
-  font-family: 'PT Sans', Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
 }
@@ -1139,6 +1164,7 @@ img {
 
 .about p:last-of-type {
   margin-bottom: 20px;
+  width: 390px;
 }
 
 .transport-companies {
@@ -1236,7 +1262,7 @@ img {
 
 .contacts p:first-of-type {
   margin-bottom: 29px;
-  min-width: 179px;
+  width: 179px;
 }
 
 .map {
@@ -1282,29 +1308,11 @@ img {
 .input-area input,
 .input-area textarea {
   padding: 8px 10px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   border: solid 2px #dee3e4;
   border-radius: 3px;
-}
-
-.input-area input::placeholder,
-.input-area textarea::placeholder {
-  font-family: 'PT Sans', Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-.input-area input:-ms-input-placeholder,
-.input-area textarea:-ms-input-placeholder {
-  font-family: 'PT Sans', Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-.input-area input::-webkit-input-placeholder,
-.input-area textarea::-webkit-input-placeholder {
-  font-family: 'PT Sans', Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
 }
 
 .input-area input:hover,
@@ -1335,7 +1343,7 @@ img {
   background-color: #f4f4f4;
 }
 
-.popup-contact-us input[type="submit"] {
+.popup-contact-us button[type="submit"] {
   padding: 10px 199px;
   width: 460px;
 }
@@ -1346,6 +1354,7 @@ img {
 
 /* FOOTER */
 .main-footer {
+  min-width: 960px;
   color: #ffffff;
   background-color: #32425c;
 }
@@ -1398,7 +1407,7 @@ img {
 }
 
 .footer-first-nav {
-  max-width: 553px;
+  width: 553px;
 }
 
 .footer-first-nav a {
@@ -1425,7 +1434,7 @@ img {
 }
 
 .footer-second-nav {
-  max-width: 530px;
+  width: 528px;
 }
 
 .footer-second-nav a {
@@ -1461,11 +1470,13 @@ img {
   flex-wrap: wrap;
   margin-right: 119px;
   padding-left: 0;
+  width: 135px;
 }
 
 .social a {
   display: block;
   margin-left: 3px;
+  margin-bottom: 3px;
   width: 42px;
   height: 42px;
   background-color: #212a3a;
@@ -1500,6 +1511,7 @@ img {
 
 .contact-developer a,
 .developed-by a {
+  display: block;
   color: #ffd180;
 }
 
@@ -1521,7 +1533,7 @@ img {
 .sort-products,
 .catalogue-pagination,
 .about-product-type {
-  font-family: 'PT Sans', Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
 }
 
 /* ХЛЕБНЫЕ КРОШКИ */
@@ -1751,11 +1763,6 @@ img {
   height: 23px;
   background: url("../img/checkbox-on.svg");
   border: none;
-  opacity: 0.3;
-}
-
-.maufacturer-label:hover .checkmark {
-  opacity: 0.5;
 }
 
 .power-field legend {
@@ -1804,11 +1811,22 @@ img {
   display: block;
 }
 
+.manufacturer-label:hover .checkmark,
 .power-label:hover .radiomark {
   opacity: 0.5;
 }
 
-.filter-form input[type="submit"] {
+.manufacturer-checkbox:disabled~.label-text,
+.power-radio:disabled~.label-text {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.manufacturer-checkbox:disabled~.checkmark,
+.power-radio:disabled~.radiomark {
+  opacity: 0.2;
+}
+
+.filter-form button[type="submit"] {
   margin-top: 75px;
   padding: 8px 5px;
   width: 140px;
@@ -1837,9 +1855,12 @@ img {
 
 .sort-type {
   margin: 0 46px 0 0;
+  width: 358px;
 }
 
 .sort-by {
+  display: inline-block;
+  vertical-align: middle;
   margin-right: 65px;
   font-size: 13px;
   line-height: 18px;
@@ -1871,10 +1892,17 @@ img {
 }
 
 .sort-direction a {
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   width: 11px;
   height: 10px;
+}
+
+.sort-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .sorted>.sort-svg path {
@@ -1882,7 +1910,7 @@ img {
 }
 
 .ascending {
-  margin-right: 16px;
+  margin-right: 15px;
 }
 
 .descending>.sort-svg {
@@ -1892,9 +1920,12 @@ img {
 /* КАТАЛОГ: ТОВАРЫ*/
 .catalogue-products-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0 32px;
+}
+
+.catalogue-products-container .product:nth-child(3n) {
+  margin-right: 0;
 }
 
 .added-to-cart-popup {
@@ -2000,12 +2031,13 @@ img {
 /* ИНФОРМАЦИЯ О ТИПЕ ТОВАРА */
 .about-product-type {
   padding: 67px 0 68px;
+  min-width: 960px;
   background-color: #f4f7f9;
 }
 
 .about-product-type h2 {
   margin: 0 0 25px;
-  font-family: 'Cuprum', Arial, sans-serif;
+  font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
   font-weight: normal;
   text-transform: uppercase;

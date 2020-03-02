@@ -7,7 +7,7 @@ function Slider(slidesClass, bulletsClass, prevClass, nextClass) {
 
   let bullets = document.querySelectorAll(bulletsClass);
   Array.prototype.slice.call(bullets).forEach(function (bullet, index) {
-    bullet.addEventListener('click', function () {
+    bullet.addEventListener("click", function () {
       self.showSlides(index);
     });
   });
